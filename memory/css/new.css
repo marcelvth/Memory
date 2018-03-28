@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+* {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+#menu {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: black;
+  z-index: 999;
+  display: none;
+}
+
+#wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 60px minmax(835px, 1fr) 30px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  color: white;
+  text-shadow: -2px 2px black;
+}
+
+header {
+  grid-area: header;
+  background: url("/img/bg1.png");
+  text-align: center;
+  border-bottom: 5px solid black;
+  font-size: 25px;
+}
+
+main {
+  grid-area: main;
+  background: url("/img/bg.png");
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(250px, 1fr) 640px minmax(250px, 1fr);
+  grid-template-areas:
+    'speler1 spel speler2';
+}
+
+#speler1 {
+  grid-area: speler1;
+  border-right: 5px solid black;
+  background: rgba(255, 255, 255, 0.2);
+  padding-left: 10px;
+}
+
+#spel {
+  grid-area: spel;
+  align-self: center;
+  display: grid;
+  grid-template-rows: repeat(4, 206px);
+  grid-template-columns: repeat(4, 150px);
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+#spel img {
+  width: 140px;
+}
+
+#spel img:hover {
+  opacity: 0.7;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+#speler2 {
+  grid-area: speler2;
+  border-left: 5px solid black;
+  background: rgba(255, 255, 255, 0.2);
+  padding-right: 10px;
+  text-align: right;
+}
+
+footer {
+  grid-area: footer;
+  background: url("../img/bg1.png");
+  text-align: center;
+  border-top: 5px solid black;
+}
