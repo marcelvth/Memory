@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/new.css">
+    <script type="text/javascript" src="js/start.js"></script>
+    <script type="text/javascript" src="js/model/model.js"></script>
+    <script type="text/javascript" src="js/controller/controller.js"></script>
+    <script type="text/javascript" src="js/view/view.js"></script>
     <title>Memory</title>
   </head>
   <body>
@@ -13,8 +17,8 @@
       </header>
       <div class="menuoption">
         <h1>Speelmodus</h1>
-        <button type="button" name="alleen">Alleen</button>
-        <button type="button" name="tegenelkaar">Tegen Elkaar</button>
+        <button id="alleen" type="button" name="alleen">Alleen</button>
+        <button id="tegen" type="button" name="tegen">Tegen Elkaar</button>
       </div>
       <div class="menuoption, hide">
         <h1>Naam</h1>
@@ -22,18 +26,19 @@
         <input type="text" name="naam1" value="">
         <p>Speler 2:</p>
         <input type="text" name="naam2" value="">
-        <button type="button" name="button">OK</button>
+        <button id="ok" type="button" name="button">OK</button>
       </div>
       <div class="menuoption, hide">
         <h1>Groep</h1>
-        <button type="button" name="groep4">Groep 4</button>
-        <button type="button" name="groep8">Groep 8</button>
+        <button id="groep4" type="button" name="groep4">Groep 4</button>
+        <button id="groep8" type="button" name="groep8">Groep 8</button>
       </div>
       <div class="menuoption, hide">
         <h1>Thema</h1>
-        <button type="button" name="jongen">Jongen</button>
-        <button type="button" name="meisje">Meisje</button>
+        <button id="jongen" type="button" name="jongen">Jongen</button>
+        <button id="meisje" type="button" name="meisje">Meisje</button>
       </div>
+      <!-- <footer>© MMK 2018</footer> -->
     </div>
     <div id="wrapper">
       <header>
@@ -42,7 +47,7 @@
         <main>
           <div id="speler1">
             <h1>Speler 1</h1>
-            <p>Aantal: 0</p>
+            <p>Aantal Sets: 0</p>
           </div>
           <div id="spel">
             <img src="img/astonmartin.png" alt="">
@@ -64,7 +69,7 @@
           </div>
           <div id="speler2">
             <h1>Speler 2</h1>
-            <p>Aantal: 0</p>
+            <p>Aantal Sets: 0</p>
           </div>
         </main>
       <footer>© MMK 2018</footer>

@@ -21,11 +21,15 @@ html, body {
   right: 0px;
   background: url("../img/bg4.png");
   z-index: 999;
+  min-height: 680px;
   display: grid;
   /* display: none; */
-  grid-template-rows: 380px 320px 1fr;
+  grid-template-rows: 380px 320px;
   grid-template-columns: 500px;
   justify-content: center;
+  grid-template-areas:
+    'header'
+    'main';
   justify-items: center;
   align-items: center;
   text-align: center;
@@ -127,7 +131,7 @@ main {
   text-align: right;
 }
 
-footer {
+#wrapper footer {
   grid-area: footer;
   background: url("../img/bg1.png");
   text-align: center;
