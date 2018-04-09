@@ -1,33 +1,42 @@
-class ModelMenu {
+class ModelMenu extends Observable {
   constructor() {
+    super();
     this.modus;
     this.naam1 = " ";
     this.naam2 = " ";
-    this.groep;
-    this.geslacht;
+  }
+
+  onMenuHandler(choice) {
+    switch (choice) {
+      case "alleen":
+        onModusHandler(choice);
+        break;
+        case "tegen":
+
+          break;
+      default:
+
+    }
   }
 
   onModusHandler(modus) {
     this.modus = modus;
+    this.getModus();
+    this.notify();
   }
 
   getModus() {
     return this.modus;
   }
 
-  onGroepHandler(groep) {
-    this.groep = groep;
+  onNaamHandler() {
+    this.naam1 = document.getElementById("naam1").value;
+    this.naam2 = document.getElementById("naam2").value;
+    this.notify();
   }
 
-  getGroep() {
-    return this.modus;
+  getNaam() {
+
   }
 
-  onGeslachtHandler(geslacht) {
-    this.geslacht = geslacht;
-  }
-
-  getGeslacht() {
-    return this.geslacht;
-  }
 }

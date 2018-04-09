@@ -4,9 +4,13 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/new.css">
     <script type="text/javascript" src="js/start.js"></script>
-    <script type="text/javascript" src="js/model/model.js"></script>
     <script type="text/javascript" src="js/controller/controller.js"></script>
-    <script type="text/javascript" src="js/view/view.js"></script>
+    <script type="text/javascript" src="js/model/observable.js"></script>
+    <script type="text/javascript" src="js/view/observer.js"></script>
+    <script type="text/javascript" src="js/model/modelmenu.js"></script>
+    <script type="text/javascript" src="js/model/modelspel.js"></script>
+    <script type="text/javascript" src="js/view/viewmenu.js"></script>
+    <script type="text/javascript" src="js/view/viewspel.js"></script>
     <title>Memory</title>
   </head>
   <body>
@@ -15,25 +19,25 @@
         <img src="gif/logo_animated.gif" alt="">
         <h1>MEMORY GAME</h1>
       </header>
-      <div class="menuoption">
-        <h1>Speelmodus</h1>
+      <div id="modus" class="menuoption">
+        <h1>Kies je modus</h1>
         <button id="alleen" type="button" name="alleen">Alleen</button>
         <button id="tegen" type="button" name="tegen">Tegen Elkaar</button>
       </div>
-      <div class="menuoption, hide">
-        <h1>Naam</h1>
+      <div id="naam" class="menuoption">
+        <h1>Vul je naam in</h1>
         <p>Speler 1:</p>
-        <input type="text" name="naam1" value="">
-        <p>Speler 2:</p>
-        <input type="text" name="naam2" value="">
-        <button id="ok" type="button" name="button">OK</button>
+        <input id="naam1" type="text" name="naam1" value="">
+        <p id="speler2">Speler 2:</p>
+        <input id="naam2" type="text" name="naam2" value="">
+        <button id="naamknop" type="button" name="button">OK</button>
       </div>
-      <div class="menuoption, hide">
+      <div id="groep" class="menuoption">
         <h1>Groep</h1>
         <button id="groep4" type="button" name="groep4">Groep 4</button>
         <button id="groep8" type="button" name="groep8">Groep 8</button>
       </div>
-      <div class="menuoption, hide">
+      <div id="thema" class="menuoption">
         <h1>Thema</h1>
         <button id="jongen" type="button" name="jongen">Jongen</button>
         <button id="meisje" type="button" name="meisje">Meisje</button>
@@ -50,14 +54,14 @@
             <p>Aantal Sets: 0</p>
           </div>
           <div id="spel">
-            <img src="img/astonmartin.png" alt="">
-            <img src="img/bmw.png" alt="">
-            <img src="img/bugatti.png" alt="">
-            <img src="img/camaro.png" alt="">
-            <img src="img/ferrari.png" alt="">
-            <img src="img/lamborghini.png" alt="">
-            <img src="img/mercedes.png" alt="">
-            <img src="img/porsche.png" alt="">
+            <img src="img/groep_8/boys/astonmartin.png" alt="">
+            <img src="img/groep_8/boys/bmw.png" alt="">
+            <img src="img/groep_8/boys/bugatti.png" alt="">
+            <img src="img/groep_8/boys/camaro.png" alt="">
+            <img src="img/groep_8/boys/ferrari.png" alt="">
+            <img src="img/groep_8/boys/lamborghini.png" alt="">
+            <img src="img/groep_8/boys/mercedes.png" alt="">
+            <img src="img/groep_8/boys/porsche.png" alt="">
             <img src="img/memorycardbackgirls.png" alt="">
             <img src="img/memorycardbackgirls.png" alt="">
             <img src="img/memorycardbackgirls.png" alt="">
