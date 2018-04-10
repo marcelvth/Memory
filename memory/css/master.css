@@ -19,7 +19,6 @@ html, body {
   z-index: 999;
   min-height: 680px;
   display: grid;
-  /* display: none; */
   grid-template-rows: 380px 320px;
   grid-template-columns: 500px;
   justify-content: center;
@@ -63,7 +62,7 @@ html, body {
 }
 
 #wrapper {
-  display: grid;
+  /* display: grid; */
   display: none;
   height: 100%;
   grid-template-rows: 60px minmax(835px, 1fr) 30px;
@@ -128,7 +127,6 @@ main {
   border-left: 5px solid black;
   background: rgba(255, 255, 255, 0.2);
   padding-right: 10px;
-  text-align: right;
 }
 
 #wrapper footer {

@@ -2,21 +2,12 @@ class Controller {
   constructor() {
     this.modelmenu = new ModelMenu();
     this.viewmenu = new ViewMenu(this.modelmenu);
-    document.getElementById("alleen").addEventListener("click", (e) => this.modelmenu.onModusHandler("alleen"));
-    document.getElementById("tegen").addEventListener("click", (e) => this.modelmenu.onModusHandler("tegen"));
-    document.getElementById("naamknop").addEventListener("click", (e) => this.modelmenu.onNaamHandler());
+    document.getElementById("alleen").addEventListener("click", (e) => this.modelmenu.changeGamestate(2));
+    document.getElementById("tegen").addEventListener("click", (e) => this.modelmenu.changeGamestate(3));
+    document.getElementById("groep4").addEventListener("click", (e) => this.modelmenu.changeGamestate(4));
+    document.getElementById("groep8").addEventListener("click", (e) => this.modelmenu.changeGamestate(5));
+    document.getElementById("naamknop").addEventListener("click", (e) => this.modelmenu.changeGamestate(6));
   }
 
-  //   onMenuOptionHandler(option) {
-  //     switch (option) {
-  //       case "alleen":
-  //         this.modelmenu.onModusHandler(option);
-  //         break;
-  //       case "tegen":
-  //         this.modelmenu.onModusHandler(option);
-  //         break;
-  //       case "naamknop":
-  //         this.modelmenu.onNaamHandler();
-  //       default:
-  // }
+
 }
