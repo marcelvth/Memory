@@ -22,14 +22,25 @@ class ViewMenu extends Observer {
       if (this.model.playerAmount === 1) {
         document.querySelector("#p2").style.display = "none";
         document.querySelector("#naam2").style.display = "none";
+        document.getElementById("inGame2").style.display = "none";
       } else if (this.model.playerAmount === 2) {
         // .speler2 laten zien
       }
     } else if (this.model.gamestate === 6) {
+      document.getElementById("naam").style.display = "none";
+      document.getElementById("thema").style.display = "grid";
+    } else if (this.model.gamestate === 8) {
+      document.getElementById("naam").style.display = "none";
+      document.getElementById("thema").style.display = "grid";
+    }
+      else if (this.model.gamestate === 7) {
       document.getElementById("menu").style.display = "none";
       document.getElementById("wrapper").style.display = "grid";
-    }
-
+      }
+      else if (this.model.gamestate === 9) {
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("wrapper").style.display = "grid";
+      }
   }
 
 }

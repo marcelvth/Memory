@@ -3,6 +3,9 @@ class ModelMenu extends Observable {
     super();
     this.gamestate=1;
     this.playerAmount;
+    this.playerName1;
+    this.playerName2;
+    this.genderType;
   }
 
   changeGamestate(button){
@@ -15,4 +18,9 @@ class ModelMenu extends Observable {
     this.notify();
   }
 
+  changeName(){
+    
+    
+  }
+  
 }
