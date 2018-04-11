@@ -40,6 +40,9 @@ class ViewMenu extends Observer {
       else if (this.model.gamestate === 9) {
       document.getElementById("menu").style.display = "none";
       document.getElementById("wrapper").style.display = "grid";
+
+      document.querySelector("#namenveld1 > h1").innerHTML = this.playerName1;
+      document.querySelector("#namenveld2 > h1").innerHTML = this.playerName2;
       }
   }
 

@@ -1,6 +1,7 @@
 class Controller {
   constructor() {
     this.modelmenu = new ModelMenu();
+    this.modelspel = new ModelSpel();
     this.viewmenu = new ViewMenu(this.modelmenu);
     document.getElementById("alleen").addEventListener("click", (e) => this.modelmenu.changeGamestate(2));
     document.getElementById("tegen").addEventListener("click", (e) => this.modelmenu.changeGamestate(3));
