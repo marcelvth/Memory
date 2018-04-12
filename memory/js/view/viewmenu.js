@@ -20,30 +20,32 @@ class ViewMenu extends Observer {
       document.getElementById("groep").style.display = "none";
       document.getElementById("naam").style.display = "grid";
       if (this.model.playerAmount === 1) {
-        document.querySelector("#p2").style.display = "none";
-        document.querySelector("#naam2").style.display = "none";
-        document.getElementById("inGame2").style.display = "none";
-      } else if (this.model.playerAmount === 2) {
-        // .speler2 laten zien
+        document.getElementById("p2").style.display = "none";
+        document.getElementById("naam2").style.display = "none";
       }
     } else if (this.model.gamestate === 6) {
-      document.getElementById("naam").style.display = "none";
-      document.getElementById("thema").style.display = "grid";
+      if (this.model.noName === false) {
+        document.getElementById("alert").innerHTML = "Je bent vergeten je naam in te vullen";
+      } else if (this.model.noName === true) {
+        document.getElementById("naam").style.display = "none";
+        document.getElementById("thema").style.display = "grid";
+      }
     } else if (this.model.gamestate === 8) {
       document.getElementById("naam").style.display = "none";
       document.getElementById("thema").style.display = "grid";
     }
-      else if (this.model.gamestate === 7) {
+    else if (this.model.gamestate === 7) {
       document.getElementById("menu").style.display = "none";
       document.getElementById("wrapper").style.display = "grid";
-      }
-      else if (this.model.gamestate === 9) {
-      document.getElementById("menu").style.display = "none";
-      document.getElementById("wrapper").style.display = "grid";
+      if (this.model.playerAmount === 1) {
+      document.getElementById("speler2").style.display = "none"; 
+      } 
 
-      document.querySelector("#namenveld1 > h1").innerHTML = this.playerName1;
-      document.querySelector("#namenveld2 > h1").innerHTML = this.playerName2;
-      }
+
+      document.querySelector("#namenveld1 > h1").innerHTML = this.model.playerName1;
+      document.querySelector("#namenveld2 > h1").innerHTML = this.model.playerName2;
+
+    }
   }
 
 }
@@ -51,6 +53,6 @@ class ViewMenu extends Observer {
 
 
 
-  
- 
+
+
 
