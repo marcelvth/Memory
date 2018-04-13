@@ -34,9 +34,9 @@ class ViewMenu extends Observer {
         document.getElementById("wrapper").getElementsByTagName("main")[0].style.gridTemplateAreas = ' "speler1 speler1" "spel spel" ';
       }
       if (this.model.genderType === 2) {
-        document.getElementById("wrapper").getElementsByTagName("header")[0].style.background = "url(../img/bg3.png)";
-        document.getElementById("wrapper").getElementsByTagName("main")[0].style.background = "url(../img/bg2.png)";
-        document.getElementById("wrapper").getElementsByTagName("footer")[0].style.background = "url(../img/bg3.png)";
+        document.getElementById("wrapper").getElementsByTagName("header")[0].style.background = "url(img/bg3.png)";
+        document.getElementById("wrapper").getElementsByTagName("main")[0].style.background = "url(img/bg2.png)";
+        document.getElementById("wrapper").getElementsByTagName("footer")[0].style.background = "url(img/bg3.png)";
       }
       if (this.model.groupType === 1 && this.model.playerAmount === 1) {
           document.getElementById("kaartenveld1").style.gridTemplateRows = ' repeat(1, 140px) ';
