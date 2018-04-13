@@ -10,5 +10,6 @@ class Controller {
     document.getElementById("meisje").addEventListener("click", (e) => this.modelmenu.changeGamestate(6));
     document.getElementById("jongen").addEventListener("click", (e) => this.modelmenu.changeGamestate(7));
     document.getElementById("naamknop").addEventListener("click", (e) => this.modelmenu.changeGamestate(8));
+    document.getElementById("naamknop").addEventListener("click", (e) => this.modelspel.makeCards());
   }
 }
