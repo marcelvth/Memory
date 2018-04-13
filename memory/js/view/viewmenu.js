@@ -24,9 +24,12 @@ class ViewMenu extends Observer {
         document.getElementById("naam2").style.display = "none";
       }
     } else if (this.model.gamestate === 6) {
+      if (this.model.noName === false) {
+        document.getElementById("alert").innerHTML = "Je bent vergeten je naam in te vullen";
+      } else if (this.model.noName === true) {
         document.getElementById("naam").style.display = "none";
         document.getElementById("thema").style.display = "grid";
-      
+      }
     } else if (this.model.gamestate === 8) {
       document.getElementById("naam").style.display = "none";
       document.getElementById("thema").style.display = "grid";

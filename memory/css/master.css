@@ -30,24 +30,7 @@ html, body {
   text-align: center;
   font-size: 25px;
 }
-header.jongen{
-  background: url("../img/bg3.png");
-}
-.jongen {
-  background: url("../img/bg2.png");
-}
-footer.jongen{
-  background: url("../img/bg3.png");
-}
-header.meisje{
-  background: url("../img/bg1.png");
-}
-.meisje {
-  background: url("../img/bg.png");
-}
-footer.meisje{
-  background: url("../img/bg1.png");
-}
+
 #menu img {
   width: 500px;
   height: 300px;
@@ -114,7 +97,6 @@ main {
 #speler1 {
   grid-area: speler1;
   border-bottom: 5px solid black;
-  border-right: 5px solid black;
   background: rgba(255, 255, 255, 0.2);
   padding-left: 10px;
   display: grid;
