@@ -97,6 +97,8 @@ main {
 #speler1 {
   grid-area: speler1;
   border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  border-radius: 5px;
   background: rgba(255, 255, 255, 0.2);
   padding-left: 10px;
   display: grid;
