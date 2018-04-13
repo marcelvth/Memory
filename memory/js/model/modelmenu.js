@@ -28,7 +28,5 @@ class ModelMenu extends Observable {
     this.playerName2 = document.querySelector("#naam2").value;
     this.notify();
   }
-  changeNameTurn() {
 
-  }
 } 
