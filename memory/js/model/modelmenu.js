@@ -3,6 +3,7 @@ class ModelMenu extends Observable {
     super();
     this.gamestate = 1;
     this.playerAmount;
+    this.groupType;
     this.playerName1;
     this.playerName2;
     this.genderType;
@@ -10,16 +11,28 @@ class ModelMenu extends Observable {
 
   changeGamestate(button) {
     console.log(this.gamestate);
-    
+
     if (this.gamestate === 2) {
       this.playerAmount = 1;
-    } else if (this.gamestate === 3) {
+    }
+    else if (this.gamestate === 3) {
       this.playerAmount = 2;
-    } else if (this.gamestate === 6 || this.gamestate === 7) {
+    }
+    else if (this.gamestate === 4) {
+      this.groupType = 1;
+    }
+    else if (this.gamestate === 5) {
+      this.groupType = 2;
+    }
+    else if (this.gamestate === 6) {
+      this.genderType = 1;
+      this.changeName();
+    }
+    else if (this.gamestate === 7) {
+      this.genderType = 2;
       this.changeName();
     }
 
-    
     this.gamestate = button;
     this.notify();
   }
@@ -29,4 +42,4 @@ class ModelMenu extends Observable {
     this.notify();
   }
 
-} 
+}
