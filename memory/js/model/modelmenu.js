@@ -15,7 +15,7 @@ class ModelMenu extends Observable {
       this.playerAmount = 1;
     } else if (this.gamestate === 3) {
       this.playerAmount = 2;
-    } else if (this.gamestate === 6) {
+    } else if (this.gamestate === 6 || this.gamestate === 7) {
       this.changeName();
     }
 
@@ -28,7 +28,5 @@ class ModelMenu extends Observable {
     this.playerName2 = document.querySelector("#naam2").value;
     this.notify();
   }
-  changeNameTurn() {
 
-  }
 } 
