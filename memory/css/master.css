@@ -80,7 +80,24 @@ html, body {
   border-bottom: 5px solid black;
   font-size: 25px;
 }
-
+header.jongen{
+  background-image: url("../img/bg3.png");
+}
+.jongen{
+    background-image: url("../img/bg2.png");
+}
+footer.jongen{
+  background-image: url("../img/bg3.png");
+}
+header.meisje{
+  background-image: url("../img/bg1.png");
+}
+.meisje{
+    background-image: url("../img/bg.png");
+}
+footer.meisje{
+  background-image: url("../img/bg1.png");
+}
 main {
   height: 100%;
   grid-area: main;
