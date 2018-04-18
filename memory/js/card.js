@@ -64,17 +64,18 @@ class Card extends Observable {
             case 51: this.cardId = url("img/groep_8/boys/tesla.png"); break;
             case 52: this.cardId = url("img/groep_8/boys/volkswagen.png"); break;
         }
+    }
 
-        getCardBack() {
-            if (!this.isClosed) {
-                return this.cardId;
-            }
-            else {
-                if (this.cardId < 9) {
-                    return url("img/memorycardbackgirls.png");
-                }
 
+    getCardBack() {
+        if (!this.isClosed) {
+            return this.cardId;
+        }
+        else {
+            if (this.cardId < 9) {
+                return url("img/memorycardbackgirls.png");
             }
+
         }
     }
 }

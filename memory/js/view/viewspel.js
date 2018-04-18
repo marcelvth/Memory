@@ -5,7 +5,11 @@ class ViewSpel extends Observer {
     }
     makeBoyGame(){
        var d = document.getElementById("spel");
-        d.className += " jongen";
+        d.className += "jongen";
+    }
+
+    makeGirlGame(){
+        
     }
 
 }

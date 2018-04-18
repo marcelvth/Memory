@@ -4,8 +4,8 @@ class Controller {
     this.modelspel = new ModelSpel();
     this.viewmenu = new ViewMenu(this.modelmenu);
     this.viewspel = new ViewSpel(this.modelspel);
-    this.card = new Card();
-    this.timer = new Timer();
+    // this.card = new Card();
+    // this.timer = new Timer();
     document.getElementById("alleen").addEventListener("click", (e) => this.modelmenu.changeGamestate(2));
     document.getElementById("tegen").addEventListener("click", (e) => this.modelmenu.changeGamestate(3));
     document.getElementById("groep4").addEventListener("click", (e) => this.modelmenu.changeGamestate(4));
@@ -15,4 +15,30 @@ class Controller {
     document.getElementById("naamknop").addEventListener("click", (e) => this.modelmenu.changeGamestate(8));
     document.getElementById("naamknop").addEventListener("click", (e) => this.modelspel.makeCards());
   }
+    travelGender() {
+      this.modelspel.setGender(this.modelmenu.getGenderType);
+    }
+    
+    GenerateCards(){
+    if (e.path[0].id == "groep4") {
+      this.group = 4;
+      for (let x = 1; x < 17; x++) {
+          var div = document.createElement("div");
+          setAttribute("id", x)
+          div.className = "card";
+
+          document.querySelector("#spel").appendChild(div);
+      }
+
+      } else if (e.path[0].id == "groep8") {
+        this.group = 8;
+        for(let x = 1; x < 33; x++) {
+          var div = document.createElement("div");
+          div.setAttribute("id", x)
+          div.className = "card"
+
+          document.querySelector("#spel").appendChild(div);
+        }
+      }
+    }
 }

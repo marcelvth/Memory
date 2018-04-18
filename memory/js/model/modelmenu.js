@@ -42,4 +42,8 @@ class ModelMenu extends Observable {
     this.notify();
   }
 
+  getGenderType() {
+    return this.genderType;
+  }
+
 }
