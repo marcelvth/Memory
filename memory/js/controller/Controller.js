@@ -30,9 +30,13 @@ class Controller {
         this.playerAmount = 2;
       }
       else if (this.gamestate === 4) {
+
+        this.generateCards();
         this.groupType = 1;
       }
       else if (this.gamestate === 5) {
+
+        this.generateCards();
         this.groupType = 2;
       }
       else if (this.gamestate === 6) {
@@ -73,6 +77,7 @@ class Controller {
     else if (this.gamestate === 8) {
       document.getElementById("menu").style.display = "none";
       document.getElementById("wrapper").style.display = "grid";
+    }
       if (this.playerAmount === 1) {
         document.getElementById("speler2").style.display = "none";
         document.getElementById("wrapper").getElementsByTagName("main")[0].style.gridTemplateAreas = ' "speler1 speler1" "spel spel" ';
@@ -91,9 +96,7 @@ class Controller {
         document.getElementById("kaartenveld1").style.gridTemplateColumns = ' repeat(9, 52px) ';
         document.getElementById("kaartenveld2").style.gridTemplateColumns = ' repeat(9, 52px) ';
       }
-      this.generateCards();
-    }
-  }
+    }                                        
 
     travelGender() {
       this.modelspel.setGender(this.genderType);
@@ -105,7 +108,7 @@ class Controller {
           var div = document.createElement("div");
           div.setAttribute("id", x)
           div.className = "card";
-
+        div.style.backgroundImage = "url(img/memorycardbackboys.png)";
           document.querySelector("#spel").appendChild(div);
       }
 
@@ -114,9 +117,9 @@ class Controller {
           var div = document.createElement("div");
           div.setAttribute("id", x)
           div.className = "card"
-
+          div.style.backgroundImage = "url(img/memorycardbackboys.png)";
           document.querySelector("#spel").appendChild(div);
         }
       }
     }
-}
+  }
