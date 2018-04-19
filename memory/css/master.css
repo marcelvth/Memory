@@ -15,7 +15,7 @@ html, body {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: url("../img/bg4.png");
+  background: url("../img/bg5.png");
   z-index: 999;
   min-height: 680px;
   display: grid;
@@ -98,6 +98,49 @@ header.meisje{
 footer.meisje{
   background-image: url("../img/bg1.png");
 }
+#alleen {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#tegen {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#groep4 {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#groep8 {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#jongen {
+  background-color: #89cff0;
+  color: black;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#meisje {
+  background-color: #FFB6C1;
+  color: black;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#button {
+  background-color: black;
+  color: white;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
 main {
   height: 100%;
   grid-area: main;
