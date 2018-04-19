@@ -3,9 +3,11 @@ class Card extends Observable {
     constructor(cardId) {
         super();
         this.isClosed = true;
+        this.cardId = cardId;
     }
 
     card() {
+
         switch (cardId) {
             // Groep 4 Kaarten Meisjes
             case 1: this.cardId = url("img/groep_4/girls/memorycardariel.png"); break;
@@ -65,7 +67,6 @@ class Card extends Observable {
             case 52: this.cardId = url("img/groep_8/boys/volkswagen.png"); break;
         }
     }
-
 
     getCardBack() {
         if (!this.isClosed) {
