@@ -59,7 +59,7 @@ class ModelSpel extends Observable {
                 this.memoryCards4boys[this.currentIndex] = this.memoryCards4boys[this.randomIndex];
                 this.memoryCards4boys[this.randomIndex] = this.temporaryValue;
             }
-            // console.log(this.memoryCards4boys);
+            
 
         } else if (this.genderType === 2 && this.groupType === 1) {
             this.currentIndex = this.memoryCards4girls.length;
