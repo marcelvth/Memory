@@ -20,7 +20,7 @@ class Controller {
     this.groupType;
     this.genderType;
   }
-    changeGamestate(button) {
+    changeGamestate(_gamestate) {
       console.log(this.gamestate);
 
       if (this.gamestate === 2) {
@@ -48,7 +48,7 @@ class Controller {
         this.modelmenu.changeName();
       }
 
-      this.gamestate = button;
+      this.gamestate = _gamestate;
       this.gameModus();
     }
 
@@ -84,9 +84,9 @@ class Controller {
         document.getElementById("speler2").style.display = "none";
         document.getElementById("wrapper").getElementsByTagName("main")[0].style.gridTemplateAreas = ' "speler1 speler1" "spel spel" ';
       }
-      if (this.genderType === 2) {
+      if (this.genderType === 1) {
         document.getElementById("wrapper").getElementsByTagName("header")[0].style.background = "url(img/bg3.png)";
-        document.getElementById("wrapper").getElementsByTagName("main")[0].style.background = "url(img/bg2.png)";
+        document.getElementById("wrapper").getElementsByTagName("main")[0].style.background = "url(img/bg3.png)";
         document.getElementById("wrapper").getElementsByTagName("footer")[0].style.background = "url(img/bg3.png)";
       }
       if (this.groupType === 1 && this.playerAmount === 1) {

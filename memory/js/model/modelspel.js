@@ -11,17 +11,17 @@ class ModelSpel extends Observable {
 
     makeCards() {
         if (this.genderType === 1 && this.groupType === 1) {
-            let o = 1;
+            let o = 9;
             for (let i = 0; i < this.memoryCards4boys.length; i++) {
-                this.memoryCards4boys[i] = "imageClass4-" + o;
+                this.memoryCards4boys[i] = o;
                 if (this.memoryCards4boys[i] == this.memoryCards4boys[i - 1]) {
                     o++;
                 }
             }
         } else if (this.genderType === 1 && this.groupType === 2) {
-            let o = 1;
+            let o = 9;
             for (let i = 8; i < this.memoryCards4boys.length; i++) {
-                this.memoryCards4boys[i] = "imageClass4-" + o;
+                this.memoryCards4boys[i] = o;
                 if (this.memoryCards4boys[i] == this.memoryCards4boys[i - 1]) {
                     o++;
                 }
@@ -29,7 +29,7 @@ class ModelSpel extends Observable {
         } else if (this.genderType === 2 && this.groupType === 1) {
             let o = 1;
             for (let i = 16; i < this.memoryCards8girls.length; i++) {
-                this.memoryCards8girls[i] = "imageClass4-" + o;
+                this.memoryCards8girls[i] = o;
                 if (this.memoryCards8girls[i] == this.memoryCards4girls[i - 1]) {
                     o++;
                 }
@@ -37,7 +37,7 @@ class ModelSpel extends Observable {
         } else if (this.genderType === 2 && this.groupType === 2) {
             let o = 1;
             for (let i = 34; i < this.memoryCards8girls.length; i++) {
-                this.memoryCards8girls[i] = "imageClass4-" + o;
+                this.memoryCards8girls[i] = o;
                 if (this.memoryCards8girls[i] == this.memoryCards4girls[i - 1]) {
                     o++;
                 }
@@ -59,8 +59,8 @@ class ModelSpel extends Observable {
                 this.memoryCards4boys[this.currentIndex] = this.memoryCards4boys[this.randomIndex];
                 this.memoryCards4boys[this.randomIndex] = this.temporaryValue;
             }
-            console.log(this.memoryCards4boys);
-            
+            // console.log(this.memoryCards4boys);
+
         } else if (this.genderType === 2 && this.groupType === 1) {
             this.currentIndex = this.memoryCards4girls.length;
 
@@ -70,8 +70,8 @@ class ModelSpel extends Observable {
                 this.temporaryValue = this.memoryCards4girls[this.currentIndex];
                 this.memoryCards4girls[this.currentIndex] = this.memoryCards4girls[this.randomIndex];
                 this.memoryCards4girls[this.randomIndex] = this.temporaryValue;
-            } console.log("test");
-            
+            }
+
         } else if (this.genderType === 1 && this.groupType === 2) {
             this.currentIndex = this.memoryCards8boys.length;
 
