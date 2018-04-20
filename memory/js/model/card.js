@@ -81,5 +81,6 @@ class Card extends Observable {
             }
 
         }
+        this.notify();
     }
 }
