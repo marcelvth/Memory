@@ -3,7 +3,7 @@ class Observer {
 		this.model = model;
 }
 
-update() {
+updateGame() {
 	console.log("Model is geupdated!");
   }
 }

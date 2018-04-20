@@ -4,7 +4,7 @@ class Controller {
     this.modelspel = new ModelSpel();
     this.viewmenu = new ViewMenu(this.modelmenu);
     this.viewspel = new ViewSpel(this.modelspel);
-    // this.card = new Card();
+
     // this.timer = new Timer();
     document.getElementById("alleen").addEventListener("click", (e) => this.changeGamestate(2));
     document.getElementById("tegen").addEventListener("click", (e) => this.changeGamestate(3));
@@ -77,6 +77,8 @@ class Controller {
     else if (this.gamestate === 8) {
       document.getElementById("menu").style.display = "none";
       document.getElementById("wrapper").style.display = "grid";
+      this.travelGender();
+      this.modelspel.makeCards();
     }
       if (this.playerAmount === 1) {
         document.getElementById("speler2").style.display = "none";
@@ -100,6 +102,7 @@ class Controller {
 
     travelGender() {
       this.modelspel.setGender(this.genderType);
+      this.modelspel.setGroup(this.groupType);      
     }
     
     generateCards(){
@@ -108,12 +111,12 @@ class Controller {
           var div = document.createElement("div");
           div.setAttribute("id", x)
           div.className = "card";
-        div.style.backgroundImage = "url(img/memorycardbackboys.png)";
+        div.style.backgroundImage = "url(img/memorycardbackgirls.png)";
           document.querySelector("#spel").appendChild(div);
       }
 
       } else if (this.group === 8) {
-        for(let x = 1; x < 33; x++) {
+        for(let x = 1; x < 37; x++) {
           var div = document.createElement("div");
           div.setAttribute("id", x)
           div.className = "card"
