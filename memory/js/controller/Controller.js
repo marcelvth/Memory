@@ -40,11 +40,11 @@ class Controller {
         this.groupType = 2;
       }
       else if (this.gamestate === 6) {
-        this.genderType = 1;
+        this.genderType = 2;
         this.modelmenu.changeName();
       }
       else if (this.gamestate === 7) {
-        this.genderType = 2;
+        this.genderType = 1;
         this.modelmenu.changeName();
       }
 

@@ -2,7 +2,7 @@ class Card extends Observable {
 
     constructor(cardId) {
         super();
-        this.isClosed = false;
+        this.isClosed = true;
         this.cardId = cardId;
         this.deck();
     }
