@@ -98,7 +98,7 @@ class Controller {
         document.getElementById("kaartenveld1").style.gridTemplateColumns = ' repeat(9, 52px) ';
         document.getElementById("kaartenveld2").style.gridTemplateColumns = ' repeat(9, 52px) ';
       }
-    }                                        
+    }      
 
     travelGender() {
       this.modelspel.setGender(this.genderType);

@@ -116,4 +116,8 @@ class ModelSpel extends Observable {
         }
 
     }
+
+    checkMatchCards() {
+        
+    }
 }   
