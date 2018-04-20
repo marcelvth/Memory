@@ -12,9 +12,9 @@ class ModelSpel extends Observable {
     makeCards() {
         if (this.genderType === 1 && this.groupType === 1) {
             let o = 1;
-            for (let i = 0; i < this.memoryCards4girls.length; i++) {
-                this.memoryCards4girls[i] = "imageClass4-" + o;
-                if (this.memoryCards4girls[i] == this.memoryCards4[i - 1]) {
+            for (let i = 0; i < this.memoryCards4boys.length; i++) {
+                this.memoryCards4boys[i] = "imageClass4-" + o;
+                if (this.memoryCards4boys[i] == this.memoryCards4boys[i - 1]) {
                     o++;
                 }
             }
@@ -22,7 +22,7 @@ class ModelSpel extends Observable {
             let o = 1;
             for (let i = 8; i < this.memoryCards4boys.length; i++) {
                 this.memoryCards4boys[i] = "imageClass4-" + o;
-                if (this.memoryCards4boys[i] == this.memoryCards4[i - 1]) {
+                if (this.memoryCards4boys[i] == this.memoryCards4boys[i - 1]) {
                     o++;
                 }
             }
@@ -30,15 +30,15 @@ class ModelSpel extends Observable {
             let o = 1;
             for (let i = 16; i < this.memoryCards8girls.length; i++) {
                 this.memoryCards8girls[i] = "imageClass4-" + o;
-                if (this.memoryCards8girls[i] == this.memoryCards4[i - 1]) {
+                if (this.memoryCards8girls[i] == this.memoryCards4girls[i - 1]) {
                     o++;
                 }
             }
         } else if (this.genderType === 2 && this.groupType === 2) {
             let o =  1;
-            for (let i = 34; i < this.memoryCards8boys.length; i++) {
-                this.memoryCards8boys[i] = "imageClass4-" + o;
-                if (this.memoryCards8boys[i] == this.memoryCards4[i - 1]) {
+            for (let i = 34; i < this.memoryCards8girls.length; i++) {
+                this.memoryCards8girls[i] = "imageClass4-" + o;
+                if (this.memoryCards8girls[i] == this.memoryCards4girls[i - 1]) {
                     o++;
                 }
             }
