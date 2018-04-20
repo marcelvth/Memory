@@ -35,7 +35,7 @@ class ModelSpel extends Observable {
                 }
             }
         } else if (this.genderType === 2 && this.groupType === 2) {
-            let o =  1;
+            let o = 1;
             for (let i = 34; i < this.memoryCards8girls.length; i++) {
                 this.memoryCards8girls[i] = "imageClass4-" + o;
                 if (this.memoryCards8girls[i] == this.memoryCards4girls[i - 1]) {
@@ -49,36 +49,68 @@ class ModelSpel extends Observable {
     }
 
     shuffleCard() {
-        this.currentIndex = this.memoryCards4boys.length;
+        if (this.genderType === 1 && this.groupType === 1) {
+            this.currentIndex = this.memoryCards4boys.length;
 
-        while (this.currentIndex !== 0) {
-            this.randomIndex = Math.floor(Math.random() * this.currentIndex);
-            this.currentIndex -= 1;
-            this.temporaryValue = this.memoryCards4boys[this.currentIndex];
-            this.memoryCards4boys[this.currentIndex] = this.memoryCards4boys[this.randomIndex];
-            this.memoryCards4boys[this.randomIndex] = this.temporaryValue;
+            while (this.currentIndex !== 0) {
+                this.randomIndex = Math.floor(Math.random() * this.currentIndex);
+                this.currentIndex -= 1;
+                this.temporaryValue = this.memoryCards4boys[this.currentIndex];
+                this.memoryCards4boys[this.currentIndex] = this.memoryCards4boys[this.randomIndex];
+                this.memoryCards4boys[this.randomIndex] = this.temporaryValue;
+            }
+        } else if (this.genderType === 2 && this.groupType === 1) {
+            this.currentIndex = this.memoryCards4girls.length;
+
+            while (this.currentIndex !== 0) {
+                this.randomIndex = Math.floor(Math.random() * this.currentIndex);
+                this.currentIndex -= 1;
+                this.temporaryValue = this.memoryCards4girls[this.currentIndex];
+                this.memoryCards4girls[this.currentIndex] = this.memoryCards4girls[this.randomIndex];
+                this.memoryCards4boys[this.randomIndex] = this.temporaryValue;
+            }
+        } else if (this.genderType === 1 && this.groupType === 2) {
+            this.currentIndex = this.memoryCards8boys.length;
+
+            while (this.currentIndex !== 0) {
+                this.randomIndex = Math.floor(Math.random() * this.currentIndex);
+                this.currentIndex -= 1;
+                this.temporaryValue = this.memoryCards8boys[this.currentIndex];
+                this.memoryCards8boys[this.currentIndex] = this.memoryCards8boys[this.randomIndex];
+                this.memoryCards8boys[this.randomIndex] = this.temporaryValue;
+            }
+        } else if (this.genderType === 2 && this.groupType === 2) {
+            this.currentIndex = this.memoryCards8girls.length;
+
+            while (this.currentIndex !== 0) {
+                this.randomIndex = Math.floor(Math.random() * this.currentIndex);
+                this.currentIndex -= 1;
+                this.temporaryValue = this.memoryCards8girls[this.currentIndex];
+                this.memoryCards8girls[this.currentIndex] = this.memoryCards8girls[this.randomIndex];
+                this.memoryCards8girls[this.randomIndex] = this.temporaryValue;
+            }
         }
     }
-    setGender(_genderType){
+    setGender(_genderType) {
         this.genderType = _genderType;
     }
     setGroup(_groupType) {
         this.groupType = _groupType;
         console.log(this.groupType);
-        
+
     }
 
-    makeArrayCards(){
+    makeArrayCards() {
         this.fillArray = [];
-        if (this.genderType === 1 && this.groupType === 1){
+        if (this.genderType === 1 && this.groupType === 1) {
             for (let i = 0; i < this.memoryCards4boys.length; i++) {
                 this.fillArray.push(new Card(this.memoryCards4boys[i]));
             }
-        } else if (this.genderType === 2 && this.groupType === 1){
+        } else if (this.genderType === 2 && this.groupType === 1) {
             for (let i = 0; i < this.memoryCards4girls.length; i++) {
                 this.fillArray.push(new Card(this.memoryCards4girls[i]));
             }
         }
-        
+
     }
 }   
