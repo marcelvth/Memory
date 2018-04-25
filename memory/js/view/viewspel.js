@@ -3,9 +3,11 @@ class ViewSpel extends Observer {
         super(model)
         this.model.addObserver(this);
     }
-    makeBoyGame(){
-       var d = document.getElementById("spel");
-        d.className += " jongen";
+
+    updateGame(){   
+            for (let i = 0; i < this.model.fillArray.length; i++) {
+                document.getElementById(i+1).style.backgroundImage = this.model.fillArray[i].getCardBack();
+            }      
     }
 
 }
