@@ -20,6 +20,7 @@ class Controller {
     this.groupType;
     this.genderType;
   }
+      // marcel
     changeGamestate(_gamestate) {
       console.log(this.gamestate);
 
@@ -51,7 +52,7 @@ class Controller {
       this.gamestate = _gamestate;
       this.gameModus();
     }
-
+      // marcel
   gameModus() {
     if(this.gamestate === 4) {
       this.group = 4;
@@ -104,7 +105,7 @@ class Controller {
       this.modelspel.setGender(this.genderType);
       this.modelspel.setGroup(this.groupType);      
     }
-    
+      // karim
     generateCards(){
     if (this.group === 4) {
       for (let x = 1; x < 17; x++) {

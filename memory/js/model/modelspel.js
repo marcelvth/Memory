@@ -7,8 +7,9 @@ class ModelSpel extends Observable {
         this.memoryCards8boys = [35, 35, 36, 36, 37, 37, 38, 38, 39, 39, 40, 40, 41, 41, 42, 42, 43, 43, 44, 44, 45, 45, 46, 46, 47, 47, 48, 48, 49, 49, 50, 50, 51, 51, 52, 52];
         this.genderType;
         this.fillArray;
+        this.flippedCards = 0;
     }
-
+        // karim
     makeCards() {
         if (this.genderType === 1 && this.groupType === 1) {
             let o = 9;
@@ -47,7 +48,7 @@ class ModelSpel extends Observable {
         this.makeArrayCards();
         this.notify();
     }
-
+        // karim
     shuffleCard() {
         if (this.genderType === 1 && this.groupType === 1) {
             this.currentIndex = this.memoryCards4boys.length;
@@ -102,7 +103,7 @@ class ModelSpel extends Observable {
         console.log(this.groupType);
 
     }
-
+        // karim
     makeArrayCards() {
         this.fillArray = [];
         if (this.genderType === 1 && this.groupType === 1) {
@@ -113,10 +114,18 @@ class ModelSpel extends Observable {
             for (let i = 0; i < this.memoryCards4girls.length; i++) {
                 this.fillArray.push(new Card(this.memoryCards4girls[i]));
             }
+        } else if (this.genderType === 2 && this.groupType === 1) {
+            for (let i = 0; i < this.memoryCards4girls.length; i++) {
+                this.fillArray.push(new Card(this.memoryCards4girls[i]));
+            }
+        }else if (this.genderType === 2 && this.groupType === 1) {
+            for (let i = 0; i < this.memoryCards4girls.length; i++) {
+                this.fillArray.push(new Card(this.memoryCards4girls[i]));
+            }
         }
 
     }
-
+        // marcel
     checkMatchCards() {
         
     }
