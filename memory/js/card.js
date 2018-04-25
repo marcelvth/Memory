@@ -70,9 +70,9 @@ class Card extends Observable {
                 return this.cardId;
             }
             else {
-                if (this.cardId < 9) {
+                if (this.cardId < 9 && this.modelmenu.genderType === 1) {
                     return url("img/memorycardbackgirls.png");
-                }
+                } 
 
             }
         }
