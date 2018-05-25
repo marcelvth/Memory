@@ -1,7 +1,7 @@
 class ModelMenu extends Observable {
   constructor() {
     super();
-
+   
     this.playerName1;
     this.playerName2;
   }
@@ -16,10 +16,6 @@ class ModelMenu extends Observable {
 
   getGenderType() {
     return this.genderType;
-  }
-
-  getPlayerNameOne() {
-    return this.playerName1;
   }
 
 }
