@@ -4,8 +4,9 @@ class Controller {
     this.modelspel = new ModelSpel();
     this.viewmenu = new ViewMenu(this.modelmenu);
     this.viewspel = new ViewSpel(this.modelspel);
+    this.timer = new Timer();
+    this.highscore = new HighScore();
 
-    // this.timer = new Timer();
     document.getElementById("alleen").addEventListener("click", (e) => this.changeGamestate(2));
     document.getElementById("tegen").addEventListener("click", (e) => this.changeGamestate(3));
     document.getElementById("groep4").addEventListener("click", (e) => this.changeGamestate(4));
@@ -73,6 +74,7 @@ class Controller {
       if (this.playerAmount === 1) {
         document.getElementById("p2").style.display = "none";
         document.getElementById("naam2").style.display = "none";
+        document.getElementById("time").style.display = "grid";
       }
     }
     else if (this.gamestate === 8) {
@@ -99,11 +101,11 @@ class Controller {
         document.getElementById("kaartenveld1").style.gridTemplateColumns = ' repeat(9, 52px) ';
         document.getElementById("kaartenveld2").style.gridTemplateColumns = ' repeat(9, 52px) ';
       }
-    }      
+    }
 
     travelGender() {
       this.modelspel.setGender(this.genderType);
-      this.modelspel.setGroup(this.groupType);      
+      this.modelspel.setGroup(this.groupType);
     }
       // karim
     generateCards(){
@@ -126,4 +128,12 @@ class Controller {
         }
       }
     }
+
+    // Timer + Highscore added, need a way to pause or stop the game.
+    // this.timer.startTimer(); .
+    // If game stops, execute this.timer.stopTimer();
+    // var currentTime = this.timer.getTotalTime();
+    // var name = this.modelmenu.getPlayerNameOne();
+    // execute this.highscore.checkHighScore(currentTime, name); .
+    
   }
