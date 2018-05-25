@@ -171,6 +171,10 @@ main {
   grid-area: namenveld1;
 }
 
+#time {
+  display: none;
+}
+
 #kaartenveld1 {
   grid-area: kaartenveld1;
   display: grid;
