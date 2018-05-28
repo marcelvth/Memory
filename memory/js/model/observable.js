@@ -15,7 +15,7 @@ class Observable {
 	notify() {
 		for (let i = 0; i < this.observers.length; i++) {
 			const observer = this.observers[i];
-			observer.updateGame();
+			observer.update();
 		}
 	}
 }

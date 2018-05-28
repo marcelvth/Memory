@@ -28,9 +28,8 @@ class Timer extends Observable {
     if (this.seconds === 60) {
       this.minutes++;
       this.seconds = 0;
-      console.log("Minutes: " + this.minutes);
     }
-    console.log("Seconds: " + this.seconds);
+    this.notify();
   }
 
   // Timer pauses, can be resumed.

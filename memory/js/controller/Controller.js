@@ -2,10 +2,11 @@ class Controller {
   constructor() {
     this.modelmenu = new ModelMenu();
     this.modelspel = new ModelSpel();
-    this.viewmenu = new ViewMenu(this.modelmenu);
-    this.viewspel = new ViewSpel(this.modelspel);
     this.timer = new Timer();
     this.highscore = new HighScore();
+    this.viewmenu = new ViewMenu(this.modelmenu);
+    this.viewspel = new ViewSpel(this.modelspel);
+    this.viewtimer = new ViewTimer(this.timer);
 
     document.getElementById("alleen").addEventListener("click", (e) => this.changeGamestate(2));
     document.getElementById("tegen").addEventListener("click", (e) => this.changeGamestate(3));
