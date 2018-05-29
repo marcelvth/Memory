@@ -3,10 +3,13 @@ class HighScore extends Observable {
     super();
     this.name;
     this.currentScore;
+    this.highScoreList = [];
+    this.place;
   }
 
   // Executes all code in order.
   checkHighScore(currentScore, name) {
+    this.place = 9;
     this.checkHighScoreList();
     this.name = name;
     this.currentScore = currentScore;
@@ -16,7 +19,7 @@ class HighScore extends Observable {
 
   // Checks and retrieves the highscore list, if there isn't one, create it.
   checkHighScoreList() {
-    if (typeof("memory_highscore0") == "undefined") {
+    if (localStorage.getItem("memory_highscore0") === null) {
       this.createHighScoreList();
     }
     else {
@@ -25,19 +28,18 @@ class HighScore extends Observable {
   }
 
   createHighScoreList() {
-    var highScoreList = [];
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 10; i++) {
       let o = i + 1;
-      highScoreList[i] = { "name": "Speler " + o, "time": 5999}
-      localStorage.setItem("memory_highscore" + i, JSON.stringify(score[i]));
+      this.highScoreList[i] = { "name": "Speler " + o, "time": 5999}
+      localStorage.setItem("memory_highscore" + i, JSON.stringify(this.highScoreList[i]));
     }
   }
 
   getHighScoreList() {
-    var highScoreList = [];
-    for (let i = 0; i < 9; i++) {
-      score[i] = localStorage.getItem("memory_highscore" + i);
-      score[i] = JSON.parse("memory_highscore" + i);
+    for (let i = 0; i < 10; i++) {
+      this.highScoreList[i] = localStorage.getItem("memory_highscore" + i);
+      this.highScoreList[i] = JSON.parse(this.highScoreList[i]);
+      console.log(this.highScoreList[i]);
     }
   }
 
@@ -47,28 +49,27 @@ class HighScore extends Observable {
   // If current score is higher than a highscore, go back 1 position and execute addHighScore()
   // unless current score is higher than 10th highscore.
   compareHighScore() {
-    for (let place = 9; place <= 0;) {
-      if (this.currentScore < score[i].time) {
-        place--;
+    while (this.place > 0) {
+      if (this.currentScore < this.highScoreList[this.place].time) {
+        this.place--;
       }
-      else if (this.currentScore == score[i].time) {
-        place++;
+      else if (this.currentScore == this.highScoreList[this.place].time) {
+        this.place++;
         this.addHighScore();
         break;
       }
-      else if (this.currentScore > score[i].time) {
-        if (place = 9) {
+      else if (this.currentScore > this.highScoreList[this.place].time) {
+        if (this.place = 9) {
           break;
         }
         else {
-          place++;
+          this.place++;
           this.addHighScore();
           break;
         }
       }
-      if (place = 0) {
+      if (this.place === 0) {
         this.addHighScore();
-        break;
       }
     }
   }
@@ -76,16 +77,21 @@ class HighScore extends Observable {
   // Last highscore is replaced by the highscore before, then goes back 1 position.
   // Repeats until current highscore is the same number as the new one and is replaced by the new one.
   addHighScore() {
-    for (let position = 9; position => place;) {
-      if (place = position) {
-        highScoreList[position].name = this.name;
-        highScoreList[position].time = this.currentScore;
+    debugger;
+    for (let i = 9; i => this.place; i--) {
+      if (this.place !== i) {
+        this.highScoreList[i] = this.highScoreList[i - 1];
+        }
+      else {
+        this.highScoreList[i].name = this.name;
+        this.highScoreList[i].time = this.currentScore;
         break;
       }
-      else {
-        highScoreList[position] = highScoreList[position - 1];
-        position--;
-      }
+    }
+    for (let i = 0; i < 10; i++) {
+      let o = i + 1;
+      localStorage.setItem("memory_highscore" + i, JSON.stringify(this.highScoreList[i]));
+      console.log(this.highScoreList[i]);
     }
   }
 

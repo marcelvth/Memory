@@ -84,6 +84,7 @@ class Controller {
       this.travelGender();
       this.modelspel.makeCards();
       this.timer.startTimer();
+      this.highscore.checkHighScore(5800, "Bobby");
     }
       if (this.playerAmount === 1) {
         document.getElementById("speler2").style.display = "none";
